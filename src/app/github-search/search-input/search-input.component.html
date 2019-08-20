@@ -1,0 +1,4 @@
+<div class="search-box-container">
+  <input class="search-box-input" placeholder="Search GitHub" [formControl]="query" />
+  <button class="search-box-button" (click)="search(query.value)" [disabled]="!query.value.trim()">Search</button>
+</div>

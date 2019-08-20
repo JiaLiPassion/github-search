@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="search-title">
+    <fa-icon [icon]="faSearch"></fa-icon>
+    Search GitHub
+  </div>
+  <div class="search-input-container">
+    <app-search-input (queryChanged)="search($event)"></app-search-input>
+  </div>
+</div>

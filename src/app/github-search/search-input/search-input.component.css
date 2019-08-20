@@ -1,0 +1,13 @@
+.search-box-container {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: row;
+}
+
+.search-box-input {
+  flex: 8 0 auto;
+}
+
+.search-box-button {
+  flex: 1 0 auto;
+}

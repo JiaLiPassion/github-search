@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.result-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex: 1 1 auto;
+}
+
+.widget-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.category-container {
+  flex: 0 1 auto;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  flex: 4 1 auto;
+}
+
+.result-header {
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.result-title {
+  flex: 4 1 auto;
+}
+
+.result-sort {
+  flex: 1 1 auto;
+  align-self: flex-end;
+}
+
+.result-list {
+  flex: 1 1 auto;
+}
+
+.active {
+  background: red;
+}

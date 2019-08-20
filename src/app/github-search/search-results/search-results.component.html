@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="header">
+    <app-search-input (queryChanged)="search($event)" [queryString]="queryString$ | async"></app-search-input>
+  </div>
+  <div class="result-container" *ngIf="searchResult$ | async as searchResult">
+    <div class="widget-container">
+      <div class="category-container">
+        <ul>
+          <li *ngFor="let category of categories">
+            <a routerLink="/result" [queryParams]="{type: category, query: searchResult.query?.query}"
+              routerLinkActive="active">{{category}}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="result">
+      <div class="result-header">
+        <div class="result-title">{{searchResult.totalCount || 0}} {{searchResult.query.type}}</div>
+      </div>
+      <div class="result-list">
+        <ng-container *ngIf="!searchResult.error">
+          <app-result-list [result]="searchResult" (pageChanged)="pageChanged($event)"></app-result-list>
+        </ng-container>
+        <ng-container *ngIf="searchResult.error">
+          Error occurs: {{searchResult.error.message}}
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

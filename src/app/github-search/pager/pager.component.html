@@ -1,0 +1,4 @@
+<button (click)="prevClicked()" [disabled]="!pageInfo || !pageInfo.previousPage">Prev</button>
+<button (click)="nextClicked()" [disabled]="!pageInfo || !pageInfo.nextPage">Next</button>
+Current Page: {{pageInfo?.currentPage}}
+Total Page: {{pageInfo?.totalPage}}

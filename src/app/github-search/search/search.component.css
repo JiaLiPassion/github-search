@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.search-title {
+  flex: 1 1 auto;
+}
+
+.search-input-container {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: row;
+}

@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="avatar">
+    <img [src]="item.avatarUrl" *ngIf="item?.avatarUrl" (click)="gotoGitHub(item?.githubUrl)">
+  </div>
+  <div class="profile-container">
+    <div class="handle">{{item?.login}}</div>
+    <div class="star">Starred: {{item?.starredCount}} repositories</div>
+    <div class="follower">Follower Count: {{item?.followerCount}}</div>
+  </div>
+</div>
