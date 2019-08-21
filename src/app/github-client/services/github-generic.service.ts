@@ -39,12 +39,14 @@ export function handleGitHubDataRequest<
     })
     .pipe(
       map((data: HttpResponse<GitHubSearchResponse>) => {
+        // get search result from data body
         const item: SearchResult<T> = {
           totalCount: data.body.total_count,
           items: data.body.items.map(mappingCallback),
           query,
           pageInfo: { currentPage: query.page }
         };
+        // parse page information from HttpHeader.Link
         const pageInfo = getPageInfo(data);
         if (pageInfo) {
           item.pageInfo.previousPage = pageInfo.previousPage;

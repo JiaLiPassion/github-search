@@ -16,11 +16,16 @@ import { UserComponent } from '../user/user.component';
 export class SearchResultsComponent implements OnInit {
   categories: GitHubCategory[] = [GitHubCategory.Repositories, GitHubCategory.Users];
 
+  // searchResult stream to show search results
   searchResult$: Observable<SearchResult<any>>;
-  research$ = new BehaviorSubject<Partial<SearchQuery>>(null);
-
+  // query string stream to show query value in search input
   queryString$: Observable<string>;
 
+  // research behaviorSubject will trigger searchQuery changed when
+  // 1. router params emit
+  // 2. prev/next pagination changed
+  // 3. research button is clicked with new query string
+  research$ = new BehaviorSubject<Partial<SearchQuery>>(null);
   constructor(private githubSearchService: GitHubSearchService, private route: ActivatedRoute) {}
 
   ngOnInit() {
