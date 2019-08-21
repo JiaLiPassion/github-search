@@ -2,7 +2,11 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserComponent } from './user.component';
 import { User, GitHubCategory } from '../../github-client';
-import { expectElementMatchUrl, expectElementContainText } from '../testing/component.test.util';
+import {
+  expectElementMatchUrl,
+  expectElementContainText,
+  expectElementSrc
+} from '../testing/component.test.util';
 
 describe('UserComponent', () => {
   let component: UserComponent;
@@ -29,7 +33,7 @@ describe('UserComponent', () => {
       login: 'testRepo',
       githubUrl: 'http://test/',
       type: GitHubCategory.Users,
-      avatarUrl: 'http://avatar',
+      avatarUrl: 'http://avatar/',
       followerCount: 10,
       starredCount: 20
     }
@@ -42,7 +46,7 @@ describe('UserComponent', () => {
       expectElementContainText(fixture, '.handle', testData.login);
       expectElementContainText(fixture, '.star', testData.starredCount.toString());
       expectElementContainText(fixture, '.follower', testData.followerCount.toString());
-      expectElementMatchUrl(fixture, '.avatar > a', testData.avatarUrl);
+      expectElementSrc(fixture, '.avatar > img', testData.avatarUrl);
     });
   });
 });

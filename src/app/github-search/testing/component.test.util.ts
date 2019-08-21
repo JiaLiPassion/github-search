@@ -56,6 +56,11 @@ export function expectElementMatchUrl(
   expect(elem.href).toBe(url);
 }
 
+export function expectElementSrc(fixture: ComponentFixture<any>, selector: string, url: string) {
+  const elem = expectElementExistence(fixture, selector);
+  expect(elem.src).toBe(url);
+}
+
 export function clickButton(fixture: ComponentFixture<any>, selector: string) {
   const event = document.createEvent('MouseEvent');
   event.initEvent('click', true, false);
