@@ -11,13 +11,12 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2018",
-      "dom"
-    ]
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2018", "dom"],
+    "paths": {
+      "@github-search/client/*": ["src/app/github-client/*"],
+      "@github-search/search/*": ["src/app/github-search/*"]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

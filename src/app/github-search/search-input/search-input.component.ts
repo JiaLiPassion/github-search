@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, Inject } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { GITHUB_BASE_URL_CONFIG, GitHubConfig } from '../../github-client';
 
 @Component({
   selector: 'app-search-input',
@@ -11,16 +12,21 @@ export class SearchInputComponent implements OnInit {
   @Output() queryChanged = new EventEmitter<string>();
 
   query = new FormControl('');
+  perPage = new FormControl('');
 
-  constructor() {}
+  constructor(@Inject(GITHUB_BASE_URL_CONFIG) private config: GitHubConfig) {}
 
   ngOnInit() {
     if (this.queryString) {
       this.query.setValue(this.queryString);
     }
+    if (this.config.page) {
+      this.perPage.setValue(this.config.page);
+    }
   }
 
   search(query: string) {
+    this.config.page = this.perPage.value;
     this.queryChanged.emit(query);
   }
 }

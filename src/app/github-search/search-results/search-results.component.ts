@@ -3,8 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 
 import { GitHubSearchService } from '../services';
 import { GitHubCategory, SearchResult, SearchQuery } from '@github-search/client/index';
-import { Observable, BehaviorSubject, Subject } from 'rxjs';
-import { switchMap, tap, map, scan, takeUntil, filter } from 'rxjs/operators';
+import { Observable, BehaviorSubject } from 'rxjs';
+import { switchMap, tap, map, scan, filter } from 'rxjs/operators';
 import { RepositoryComponent } from '../repository/repository.component';
 import { UserComponent } from '../user/user.component';
 

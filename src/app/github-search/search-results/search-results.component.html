@@ -23,7 +23,7 @@
           <app-result-list [result]="searchResult" (pageChanged)="pageChanged($event)"></app-result-list>
         </ng-container>
         <ng-container *ngIf="searchResult.error">
-          Error occurs: {{searchResult.error.message}}
+          <span class="error">Error occurs: {{searchResult.error.message}}</span>
         </ng-container>
       </div>
     </div>

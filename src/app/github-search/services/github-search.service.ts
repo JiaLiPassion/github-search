@@ -15,6 +15,13 @@ export class GitHubSearchService {
   constructor(private githubClient: GitHubClientService) {}
 
   search(searchQuery: SearchQuery): Observable<SearchResult<SearchResultItem>> {
+    if (!searchQuery.query) {
+      return of({
+        query: searchQuery,
+        items: [],
+        error: new Error('Query string can not be empty')
+      });
+    }
     if (searchQuery.type === GitHubCategory.Repositories) {
       return this.githubClient.searchRepositories(searchQuery);
     }

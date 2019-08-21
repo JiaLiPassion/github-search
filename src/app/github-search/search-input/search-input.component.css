@@ -5,9 +5,14 @@
 }
 
 .search-box-input {
-  flex: 8 0 auto;
+  flex: 8 1 auto;
+}
+
+.per-page-container {
+  flex: 3 1 auto;
+  display: flex;
 }
 
 .search-box-button {
-  flex: 1 0 auto;
+  flex: 1 1 auto;
 }

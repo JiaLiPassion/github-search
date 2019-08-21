@@ -8,9 +8,8 @@ describe('DynamicItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DynamicItemComponent ]
-    })
-    .compileComponents();
+      declarations: [DynamicItemComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
