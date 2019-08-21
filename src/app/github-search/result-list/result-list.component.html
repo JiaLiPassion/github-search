@@ -3,7 +3,6 @@
     <app-dynamic-item [item]="item"></app-dynamic-item>
     <hr>
   </ng-container>
-  <hr>
   <app-pager [pageInfo]="result.pageInfo" (pageChanged)="pageChangeHandler($event)"></app-pager>
 </ng-container>
 <ng-template #empty_tpl>

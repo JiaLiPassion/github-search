@@ -2,3 +2,11 @@
   height: 30px;
   cursor: pointer;
 }
+
+.profile-container label {
+  color: #b4886b;
+  font-weight: bold;
+  display: block;
+  width: 150px;
+  float: left;
+}

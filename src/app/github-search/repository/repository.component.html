@@ -1,9 +1,11 @@
 <div class="container">
   <div class="name">
-    <a href="{{item?.githubUrl}}">{{item?.name}}</a>
+    <label>Name:</label><a href="{{item?.githubUrl}}">{{item?.name}}</a>
   </div>
   <div class="detail-container">
-    <div class="description">Description: {{item?.description}}</div>
-    <div class="owner">Owner: <a href="{{item?.owner?.url}}">{{item?.owner?.login}}</a></div>
+    <div class="description">
+      <label>Description:</label>{{item?.description}}</div>
+    <div class="owner">
+      <label>Owner:</label><a href="{{item?.owner?.url}}">{{item?.owner?.login}}</a></div>
   </div>
 </div>
