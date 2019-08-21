@@ -60,6 +60,6 @@ export class SearchResultsComponent implements OnInit {
   }
 
   search(query: string) {
-    this.research$.next({ query });
+    this.research$.next({ query, page: '1' });
   }
 }

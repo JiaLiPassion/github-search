@@ -87,14 +87,14 @@ describe('SearchResultsComponent', () => {
   it('search input should trigger search', () => {
     const params = {
       query: 'testQuery',
-      page: '1',
+      page: '3',
       type: GitHubCategory.Repositories
     };
     activatedRoute.queryParams.next(params);
     expect(githubService.search).toHaveBeenCalledWith(params);
     const pageComp = fixture.debugElement.query(By.css('app-search-input')).componentInstance;
     pageComp.queryChanged.emit('newQuery');
-    expect(githubService.search).toHaveBeenCalledWith({ ...params, query: 'newQuery' });
+    expect(githubService.search).toHaveBeenCalledWith({ ...params, query: 'newQuery', page: '1' });
   });
 
   it('search result item should contain correct component', () => {
